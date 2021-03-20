@@ -64,11 +64,44 @@
      color: white;
  }
 
-             #btnReiniciar{
-                 width: 100px;
-                 height: 100px;
-                 position: absolute;
-                 left: calc(50vw - 50px);
-                 top: calc(10vh - 20px);
-                 cursor: pointer;
-             }
+ #btnReiniciar{
+     width: 100px;
+     height: 100px;
+     position: absolute;
+     left: calc(50vw - 50px);
+     top: calc(10vh - 20px);
+     cursor: pointer;
+ }
+
+  #parabens{
+      position: absolute;
+      left: calc(30vw - 50px);
+      top: calc(50vh - 20px);
+      cursor: pointer;
+      color: white;
+  }
+
+    #erros{
+        position: absolute;
+        left: calc(30vw - 50px);
+        top: calc(10vh - 20px);
+        cursor: pointer;
+        color: black;
+    }
+
+    #salvarPontuacao{
+       position: absolute;
+       left: calc(20vw - 50px);
+       top: calc(70vh - 20px);
+       cursor: pointer;
+       color: black;
+    }
+
+   #history{
+         position: absolute;
+         left: calc(30vw - 50px);
+         top: calc(40vh - 20px);
+         cursor: pointer;
+         color: white;
+     }
+

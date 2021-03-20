@@ -57,11 +57,14 @@ var numeros = [1, 2, 3, 4, 5, 6];
                     reinicia();
                     pos=0;
                     erros++;
+                    document.getElementById("erros").innerHTML="Erros: " + erros;
                 }
 
                 /// Todos acertos
-                if (pos == 6)
-                    alert("Parabéns!");
+                if (pos == 6){
+                    document.getElementById("parabens").style.display = "block";
+                    document.getElementById("salvarPontuacao").style.display = "block";
+                }
             }
 
             function geraSequencia(){
@@ -76,4 +79,38 @@ var numeros = [1, 2, 3, 4, 5, 6];
                 document.getElementById("button5").style.display = "block";
                 document.getElementById("button6").style.display = "block";
                 document.getElementById("janela").style.backgroundColor = "white";
+                document.getElementById("parabens").style.display = "none";
+                document.getElementById("salvarPontuacao").style.display = "none";
+                document.getElementById("history").style.display = "none";
+                document.getElementById("erros").innerHTML="";
+                document.getElementById("erros").innerHTML="Erros: " + erros;
+            }
+
+            /// Salva a pontuação no histórico
+            function salvarPontuacao(){
+                var nome = document.getElementById("nomejogador").value;
+                localStorage.setItem(nome, erros);
+                erros=0;
+            }
+
+            function historico(){
+                document.getElementById("parabens").style.display = "none";
+                document.getElementById("salvarPontuacao").style.display = "none";
+                document.getElementById("history").style.display = "block";
+                var qtdeJogadores = localStorage.length;
+                var chave;
+                var valor;
+                var string;
+
+                /// Obtém os valores do localStorage
+                var valores = [],
+                        chaves = Object.keys(localStorage),
+                        i = chaves.length;
+
+                    while ( i-- ) {
+                        valores.push( localStorage.getItem(chaves[i]) );
+                    }
+                for (i = 0 ; i < qtdeJogadores ; i++){
+                    document.getElementById("history").innerHTML="Nome: " + chaves[i] + " | " + "Erros: " + valores[i];
+                }
             }
